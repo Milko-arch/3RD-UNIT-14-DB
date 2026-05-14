@@ -14,11 +14,11 @@
             --p-color: #6366f1;
             --s-color: #f43f5e;
             --bg-color: #f5f3ff;
-            /* Chocolate Palette */
-            --choco-dark: #3e2723;
-            --choco-mid: #5d4037;
-            --choco-light: #8d6e63;
-            --choco-gold: #d4a373;
+            /* Pastel Green Palette */
+            --pastel-green-dark: #2d4a3e;
+            --pastel-green-mid: #d1fae5;
+            --pastel-green-light: #f0fdf4;
+            --pastel-green-accent: #10b981;
         }
 
         body {
@@ -223,20 +223,20 @@
             text-shadow: 1px 1px 0px rgba(255,255,255,0.8);
         }
 
-        /* Chocolate Onboarding Style */
+        /* Pastel Green Onboarding Style */
         #onboarding {
-            background: radial-gradient(circle at center, #5d4037 0%, #3e2723 100%);
-            box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
+            background: radial-gradient(circle at center, #d1fae5 0%, #ecfdf5 100%);
+            box-shadow: inset 0 0 100px rgba(16, 185, 129, 0.1);
         }
-        .choco-title {
-            color: #d4a373;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5), 0 0 20px rgba(212, 163, 115, 0.3);
+        .pastel-title {
+            color: #065f46;
+            text-shadow: 0 4px 10px rgba(16, 185, 129, 0.2), 0 0 20px rgba(255, 255, 255, 0.5);
         }
-        .choco-subtitle {
-            color: #a1887f;
+        .pastel-subtitle {
+            color: #059669;
         }
-        .hero-label-blue { color: #93c5fd; }
-        .hero-label-pink { color: #f9a8d4; }
+        .hero-label-blue { color: #2563eb; }
+        .hero-label-pink { color: #db2777; }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -288,24 +288,24 @@
         </div>
     </div>
 
-    <!-- Pantalla de Inicio (Chocolate Brillante) -->
+    <!-- Pantalla de Inicio (Verde Pastel) -->
     <div id="onboarding" class="fixed inset-0 z-[100] flex flex-col items-center justify-center p-6 text-white overflow-y-auto">
         <div class="max-w-xl w-full text-center py-10 flex-grow flex flex-col justify-center">
             <div class="mb-4 animate__animated animate__fadeInDown">
-                <h1 class="text-7xl font-bold-game tracking-wider choco-title uppercase">Footprints</h1>
-                <p class="text-3xl font-game choco-subtitle mt-2 uppercase tracking-widest">THIRD GRADE UNIT 14</p>
-                <p class="text-lg font-game opacity-50 mt-1 uppercase">Academy Adventure</p>
+                <h1 class="text-7xl font-bold-game tracking-wider pastel-title uppercase">Footprints</h1>
+                <p class="text-3xl font-game pastel-subtitle mt-2 uppercase tracking-widest">THIRD GRADE UNIT 14</p>
+                <p class="text-lg font-game opacity-60 mt-1 uppercase text-emerald-800">Academy Adventure</p>
             </div>
             
-            <div class="w-24 h-1 bg-[#d4a373]/30 mx-auto my-8 rounded-full"></div>
+            <div class="w-24 h-1 bg-emerald-500/20 mx-auto my-8 rounded-full"></div>
 
-            <h2 class="text-4xl font-game mb-8 animate__animated animate__fadeIn text-[#d4a373]">CHOOSE YOUR HERO!</h2>
+            <h2 class="text-4xl font-game mb-8 animate__animated animate__fadeIn text-emerald-700">CHOOSE YOUR HERO!</h2>
             <div class="grid grid-cols-2 gap-6 mb-12">
-                <div onclick="selectPower('blue', 'Leo')" class="glass bg-white/10 border-white/20 p-6 cursor-pointer hover:scale-105 transition-all group shadow-2xl">
+                <div onclick="selectPower('blue', 'Leo')" class="glass bg-white/60 border-white/40 p-6 cursor-pointer hover:scale-105 transition-all group shadow-2xl">
                     <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Leo" class="w-32 h-32 mx-auto group-hover:rotate-12 transition-transform">
                     <p class="mt-4 font-bold-game hero-label-blue uppercase">Blue Bolt</p>
                 </div>
-                <div onclick="selectPower('pink', 'Mia')" class="glass bg-white/10 border-white/20 p-6 cursor-pointer hover:scale-105 transition-all group shadow-2xl">
+                <div onclick="selectPower('pink', 'Mia')" class="glass bg-white/60 border-white/40 p-6 cursor-pointer hover:scale-105 transition-all group shadow-2xl">
                     <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Mia" class="w-32 h-32 mx-auto group-hover:-rotate-12 transition-transform">
                     <p class="mt-4 font-bold-game hero-label-pink uppercase">Pink Fire</p>
                 </div>
@@ -561,7 +561,7 @@
         function selectPower(color, name) {
             state.userPower = color;
             state.heroName = name;
-            document.documentElement.style.setProperty('--p-color', color === 'blue' ? '#6366f1' : '#ec4899');
+            document.documentElement.style.setProperty('--p-color', color === 'blue' ? '#2563eb' : '#db2777');
             document.getElementById('hud-avatar').src = `https://api.dicebear.com/7.x/bottts/svg?seed=${name}`;
             document.getElementById('name-modal').classList.remove('hidden');
         }
@@ -998,7 +998,7 @@
             doc.setTextColor(71, 85, 105);
             doc.setFontSize(14);
             doc.text("For successfully mastering the English Mission Words", w/2, 88, { align: 'center' });
-            doc.text("NEW VOCABULARY QUEST 3rd Grade", w/2, 95, { align: 'center' });
+            doc.text("NEW VOCABULARY QUEST 3RD GRADE UNIT 14 SPELLING", w/2, 95, { align: 'center' });
             
             doc.setFontSize(10);
             doc.setTextColor(100, 116, 139);
